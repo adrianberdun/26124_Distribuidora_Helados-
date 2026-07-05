@@ -1,4 +1,6 @@
 /* Selector Universal */
+/* utilice BEM si bien el proyecto es chico pero queda preparado para escalar */
+
 * {
     margin: 0;
     padding: 0;
@@ -181,8 +183,11 @@ section {
 /* Reseñas con grid las dos dimensiones */
 .reseñas-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* rid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
 .reseña-card {
@@ -207,6 +212,7 @@ section {
 /* donde ubicarnos */
 .table-container {
     overflow-x: auto; /* evita crash en pantalla chica */
+    width: 100%; 
     max-width: 900px;
     margin: 0 auto;
 }
@@ -348,8 +354,12 @@ section {
 
     /* Productos verticales si el espacio baja */
     .productos-container {
-        flex-direction: column;
-        align-items: center;
+        /* flex-direction: column;
+        align-items: center; */ 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
     }
 
     .product-card {
