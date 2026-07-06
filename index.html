@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helados Alan - Pre-Entrega</title>
+    <title>Alan Helados - Mayorista de Helados y Congelados</title> 
+    <meta name="description" content="Distribuidora mayorista de helados y congelados directo de fábrica. Accedé al catálogo de palitos, cremas y baldes con los mejores precios de Zona Sur y la Costa.">
+    <meta name="keywords" content="helados mayorista, fabrica de helados, palitos de agua, baldes de crema, Alan helados, precio mayorista kioscos">
+    <meta name="author" content="Reinaldo Adrian Berdun">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -23,6 +27,11 @@
                 <li class="navItem"><a href="#reseñas" class="navLink">Reseñas</a></li>
                 <li class="navItem"><a href="#sucursales" class="navLink">Sucursales</a></li>
                 <li class="navItem"><a href="#contacto" class="navLink">Contacto</a></li>
+                <li class="navItem">
+                    <button id="cartToggleBtn" class="cartToggleBtn" aria-label="Ver carrito de compras">
+                        🛒 Carrito (<span id="cartCounter">0</span>)
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -30,6 +39,8 @@
     <main id="inicio">
         
         <section class="heroSection">
+            <!-- Esta es la pasarela de imágenes de fondo -->
+            <div class="heroBackgroundSlider"></div>
             <div class="heroContent">
                 <h2>Tu Mejor Mayorista de Helados y Congelados</h2>
                 <p>Accedé a la mejor variedad de palitos, cremas y postres directo de fábrica con los precios más competitivos del mercado.</p>
@@ -38,35 +49,12 @@
 
         <section id="productos" class="productosSection">
             <h3 class="sectionTitle">Nuestros Productos Destacados</h3>
-            <div class="productosContainer">
-                
-                <article class="productCard">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2437/2437702.png" alt="Línea Ice Pop" class="productCardImage">
-                    <h4 class="productCardTitle">Línea Ice Pop</h4>
-                    <p class="productCardDescription">Palitos de agua y crema súper económicos. La opción más accesible e ideal para tu negocio.</p>
-                    <span class="productCardPrice">Precio Mayorista</span>
-                    <button class="productCardButton">Ver Catálogo</button>
-                </article>
-
-                <article class="productCard">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3014/3014693.png" alt="Línea Premium Black" class="productCardImage">
-                    <h4 class="productCardTitle">Línea Black Premium</h4>
-                    <p class="productCardDescription">Cremas heladas de la más alta calidad y combinaciones seleccionadas de nivel premium.</p>
-                    <span class="productCardPrice">Precio Mayorista</span>
-                    <button class="productCardButton">Ver Catálogo</button>
-                </article>
-
-                <article class="productCard">
-                    <img src="https://cdn-icons-png.flaticon.com/512/938/938053.png" alt="Baldes de Crema" class="productCardImage">
-                    <h4 class="productCardTitle">Cremas y Baldes 10L</h4>
-                    <p class="productCardDescription">Gran variedad de sabores y combinaciones clásicas e innovadoras listas para despachar.</p>
-                    <span class="productCardPrice">Precio Mayorista</span>
-                    <button class="productCardButton">Ver Catálogo</button>
-                </article>
-
+            <!-- El contenido de este div se generará dinámicamente con JS Fetch -->
+            <div id="productosContainer" class="productosContainer">
+                <p class="loadingText">Cargando catálogo mayorista de helados...</p>
             </div>
         </section>
-
+        
         <section id="reseñas" class="reseñasSection">
             <h3 class="sectionTitle">Lo que dicen nuestros clientes</h3>
             <div class="reseñasGrid">
@@ -151,10 +139,32 @@
 
     </main>
 
+    <div id="cartModal" class="cartModal">
+        <div class="cartModalContent">
+            <div class="cartModalHeader">
+                <h3>Tu Pedido Mayorista</h3>
+                <button id="cartCloseBtn" class="cartCloseBtn" aria-label="Cerrar carrito">&times;</button>
+            </div>
+            <div id="cartItemsContainer" class="cartItemsContainer">
+                <!-- Se rellena con JS -->
+                <p class="emptyCartText">El carrito está vacío.</p>
+            </div>
+            <div class="cartModalFooter">
+                <div class="cartTotalRow">
+                    <span>Total estimado:</span>
+                    <span id="cartTotalAmount">$0.00</span>
+                </div>
+                <button id="checkoutBtn" class="checkoutBtn">Simular Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
     <footer class="footerMain">
         <p>Copyright © 2026 - Alan Helados | Proyecto Entrega Final Talento Tech</p>
         <p class="footerSubtext">Desarrollado por Reinaldo Adrian Berdun #26624</p>
     </footer>
 
+    <script src="js/script.js"> </script> /* enlace a js-----------------------------------------*/  
+    
 </body>
 </html>

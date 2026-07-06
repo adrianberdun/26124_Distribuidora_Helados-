@@ -102,13 +102,14 @@ h1, h2, h3, h4 {
     left: 0;
     width: 200%; /* El doble del ancho para permitir el desplazamiento infinito */
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1501443712940-3de7239474bc?auto=format&fit=crop&w=600&q=80'),
-                      url('https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80'),
-                      url('https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=600&q=80');
-    background-repeat: repeat-x; /* Se repite horizontalmente */
+    background-image: url('../imagenes/balde.jpg'),
+                     url('../imagenes/palitobombon.jpg'),
+                      url('../imagenes/alfajorhelado.jpg'),
+                      url('../imagenes/balde.jpg');
+    background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: contain;    /* Ajusta las imágenes al alto del contenedor */
-    background-position: left center;
-    opacity: 0.25;               /* Opacidad baja para que no tape ni compita con el texto */
+    background-position: 0% center, 33% center, 66% center;
+    opacity: 1;               /* Opacidad baja para que no tape ni compita con el texto */
     z-index: 1;                  /* Queda por detrás del contenido */
     animation: pasarelaInfinita 30s linear infinite; /* Animación continua */
 }
@@ -118,6 +119,7 @@ h1, h2, h3, h4 {
     z-index: 2; /* Mayor que el fondo */
     max-width: 800px;
     margin: 0 auto;
+    background-color: rgba(152, 11, 150, 0.8); /* Fondo semitransparente para mejorar la legibilidad */
 }
 
 .heroContent h2 {
